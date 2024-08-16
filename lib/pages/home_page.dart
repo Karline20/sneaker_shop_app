@@ -34,24 +34,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
           onPressed: () {
             Scaffold.of(context).openDrawer();
           }, 
-          icon: const Padding(
-            padding: EdgeInsets.only(left: 12.0),
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 12.0),
             child: Icon(
               Icons.menu,
-              color: Colors.black,),
+              color: Theme.of(context).colorScheme.tertiary,),
           ),
           ),
         )
       ),
       drawer: Drawer(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Theme.of(context).colorScheme.surface,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -61,57 +61,57 @@ class _HomePageState extends State<HomePage> {
             DrawerHeader(
               child: Image.asset(
                 'lib/images/nikelogo.png',
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.tertiary,
               )
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Divider(
-                color: Colors.grey[800],
+                color: Theme.of(context).colorScheme.tertiary,
                 ),
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(left: 25.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
               child: ListTile(
                 leading: Icon(
                   Icons.home_outlined,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.tertiary
                   ),
                 title: Text(
                   'Home',
                   style: TextStyle(
-                    color: Colors.white
+                    color: Theme.of(context).colorScheme.tertiary
                   ),
                   ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 25.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
               child: ListTile(
                 leading: Icon(
                   Icons.shopping_cart_checkout_rounded,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.tertiary,
                   ),
                 title: Text(
                   'Cart',
                   style: TextStyle(
-                    color: Colors.white
+                    color: Theme.of(context).colorScheme.tertiary
                   ),
                   ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 25.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
               child: ListTile(
                 leading: Icon(
                   Icons.info_outline_rounded,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.tertiary,
                   ),
                 title: Text(
                   'About',
                   style: TextStyle(
-                    color: Colors.white
+                    color: Theme.of(context).colorScheme.tertiary
                   ),
                   ),
               ),
@@ -119,17 +119,17 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(left: 25.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
               child: ListTile(
                 leading: Icon(
                   Icons.login_rounded,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.tertiary,
                   ),
                 title: Text(
                   'Logout',
                   style: TextStyle(
-                    color: Colors.white
+                    color: Theme.of(context).colorScheme.tertiary
                   ),
                   ),
               ),
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).colorScheme.surface,
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
