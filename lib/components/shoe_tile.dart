@@ -18,7 +18,7 @@ class ShoeTile extends StatelessWidget {
       margin: const EdgeInsets.only(left: 25),
       width: 280,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary, 
+        color: Theme.of(context).colorScheme.primary, 
         borderRadius: BorderRadius.circular(12)),
 
       child: Column(
@@ -38,7 +38,7 @@ class ShoeTile extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               shoe.description,
-              style: TextStyle(color: Colors.grey[600]),
+              style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
               ),
           ),
 
@@ -57,7 +57,7 @@ class ShoeTile extends StatelessWidget {
                   
                   const SizedBox(height: 5),
                   //price
-                  Text('\$${shoe.price}', style: const TextStyle(color: Colors.grey),)
+                  Text('\$${shoe.price}', style: TextStyle(color: Theme.of(context).colorScheme.tertiary),)
                 ],),
             
                 //plus button
@@ -65,14 +65,14 @@ class ShoeTile extends StatelessWidget {
                   onTap: addToCart,
                   child: Container (
                     padding: const EdgeInsets.all(20),
-                    decoration: const BoxDecoration(
-                      color: Colors.black, 
-                      borderRadius: BorderRadius.only(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.tertiary, 
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(12),
                         bottomRight: Radius.circular(12)
                         )
                       ),
-                    child: const Icon(Icons.add, color: Colors.white,),
+                    child: Icon(Icons.add, color: Theme.of(context).colorScheme.surface,),
                   ),
                 )
               ],

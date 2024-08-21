@@ -27,7 +27,7 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.circular(8)),
       margin: const EdgeInsets.only(bottom: 10),
 
       child: ListTile(
@@ -41,11 +41,20 @@ class _CartItemState extends State<CartItem> {
             ),
           ),
         ),
-        title: Text(widget.shoe.name),
-        subtitle: Text(widget.shoe.price),
+        title: Text(
+          widget.shoe.name,
+          style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+          ),
+        subtitle: Text(
+          widget.shoe.price,
+          style: TextStyle(color: Theme.of(context).colorScheme.tertiary)
+          ),
         trailing: IconButton(
           onPressed: removeItemFromCart, 
-          icon: const Icon(Icons.delete)
+          icon: Icon(
+            Icons.delete,
+            color: Theme.of(context).colorScheme.error,
+            )
           ),
       ),
     );
